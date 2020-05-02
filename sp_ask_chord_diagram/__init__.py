@@ -297,7 +297,7 @@ def get_html_template():
 if __name__ == '__main__':
     html_template = get_html_template()
     soup = BeautifulSoup(html_template, 'html.parser')
-    breakpoint()
+    #breakpoint()
     #for Gephi
     nodes, edges = get_data_for_gephi(2019, 9, 9, to="2020-04-30")
     nodes.to_csv('nodes.csv', index=False)
