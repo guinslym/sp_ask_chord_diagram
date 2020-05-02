@@ -295,9 +295,6 @@ def get_html_template():
 
 
 if __name__ == '__main__':
-    html_template = get_html_template()
-    soup = BeautifulSoup(html_template, 'html.parser')
-    #breakpoint()
     #for Gephi
     nodes, edges = get_data_for_gephi(2019, 9, 9, to="2020-04-30")
     nodes.to_csv('nodes.csv', index=False)
@@ -307,4 +304,8 @@ if __name__ == '__main__':
     df = get_data_for_chord_diagram(2019, 9, 9, to="2020-04-30")
     df.to_excel("data_for_chord_diagram_or_network_graph.xlsx", index=False)
     df.to_json("for_chordiagram.json",orient='records')
+
+    #for creating Html file with JSON data
+    html_template = get_html_template()
+    soup = BeautifulSoup(html_template, 'html.parser')
 
